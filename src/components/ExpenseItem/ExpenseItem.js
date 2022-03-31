@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
@@ -11,7 +12,7 @@ const ExpenseItem = (props) => {
   console.log(props.date.toLocaleString("en-US", { month: "long" }));
 
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       <div className="expense-item__date">
         <ExpenseDate date={props.date} />
       </div>
@@ -21,7 +22,7 @@ const ExpenseItem = (props) => {
         </div>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 };
 

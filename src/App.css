@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.expense-style {
+  background-color: #363635;
+  padding: 3rem;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
