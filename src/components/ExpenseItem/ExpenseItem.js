@@ -11,6 +11,10 @@ const ExpenseItem = (props) => {
   // console.log(expenseDate);
   console.log(props.date.toLocaleString("en-US", { month: "long" }));
 
+  const clickHandler = () => {
+    console.log("clicked from the function");
+  };
+
   return (
     <Card className="expense-item">
       <div className="expense-item__date">
@@ -22,6 +26,7 @@ const ExpenseItem = (props) => {
         </div>
         <div className="expense-item__price">${props.amount}</div>
       </div>
+      <button onClick={clickHandler}>Change title</button>
     </Card>
   );
 };
