@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
@@ -9,10 +9,15 @@ const ExpenseItem = (props) => {
   // const expensePrice = 215;
 
   // console.log(expenseDate);
+
+  const [title, setTitle] = useState(props.title);
+  console.log(useState(props.title));
   console.log(props.date.toLocaleString("en-US", { month: "long" }));
 
   const clickHandler = () => {
-    console.log("clicked from the function");
+    // console.log("clicked from the function");
+    setTitle("updated!");
+    console.log(title);
   };
 
   return (
@@ -22,7 +27,7 @@ const ExpenseItem = (props) => {
       </div>
       <div className="expense-item__description">
         <div className="expense-item__title">
-          <h2>{props.title}</h2>
+          <h2>{title}</h2>
         </div>
         <div className="expense-item__price">${props.amount}</div>
       </div>
