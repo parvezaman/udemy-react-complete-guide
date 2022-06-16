@@ -3,30 +3,40 @@ import "./ExpenseForm.css";
 // import { useState } from "react";
 
 const ExpenseForm = () => {
-  /* const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmmount, setEnteredAmmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState(""); */
+  const [enteredDate, setEnteredDate] = useState("");
 
   //   another way to manage all these three useStates by only one useState
-  const [userInput, setUserInput] = useState({
+  /* const [userInput, setUserInput] = useState({
     enteredTitle: "",
     enteredAmmount: "",
     enteredDate: "",
-  });
+  }); */
   const titleChangeHandler = (event) => {
-    // setEnteredTitle(event.target.value);
-    setUserInput({ ...userInput, enteredTitle: event.target.value });
+    setEnteredTitle(event.target.value); //for single useState
+
+    /*  setUserInput({  // one way of handling multiple states in a single useState
+        ...userInput, 
+        enteredTitle: event.target.value });*/
+
+    //   another and better way to handle multiple states
+    /* setUserInput((previousState) => {
+      return { ...previousState, enteredTitle: event.target.value };
+    }); */
   };
 
   const ammountChangeHandle = (event) => {
-    // setEnteredAmmount(event.target.value);
-    setUserInput({ ...userInput, enteredAmmount: event.target.value });
+    setEnteredAmmount(event.target.value);
+    // setUserInput({ ...userInput, enteredAmmount: event.target.value });
   };
 
   const dateChangeHandler = (event) => {
-    // setEnteredDate(event.target.value);
-    setUserInput({ ...userInput, enteredDate: event.target.value });
+    setEnteredDate(event.target.value);
+    // setUserInput({ ...userInput, enteredDate: event.target.value });
   };
+  console.log(enteredTitle, en  teredAmmount, enteredDate);
+  //   console.log(userInput);
   return (
     <form>
       <div className="new-expense__controls">
