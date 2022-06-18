@@ -2,3 +2,9 @@
   padding: 3rem;
   background-color: #1c1c1b;
 }
+.no-content-flag {
+  color: rgb(66, 208, 243);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
