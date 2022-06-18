@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Expenses.css";
 import Card from "../UI/Card";
-import ExpenseItem from "./ExpenseItem";
+// import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   console.log(props.items);
@@ -17,7 +18,7 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-  let expensesContent = <p className="no-content-flag">No items to show !!!</p>;
+  /*   let expensesContent = <p className="no-content-flag">No items to show !!!</p>;
   if (filteredExpenses.length > 0) {
     expensesContent = filteredExpenses.map((expense) => (
       <ExpenseItem
@@ -27,7 +28,8 @@ const Expenses = (props) => {
         date={expense.date}
       />
     ));
-  }
+  } */
+  // line 22-30 are moved into ExpenseList.js file
   return (
     <Card className="expenses">
       <ExpenseFilter
@@ -83,7 +85,8 @@ const Expenses = (props) => {
         ))}
  */}
       {/* the same thing we can do using && operator (line: 46-57) and pretty neat way by declaring variable before return*/}
-      {expensesContent}
+      {/* {expensesContent} remember? we moved them into ExpenseList.js */}
+      <ExpensesList items={filteredExpenses} />
     </Card>
   );
 };
