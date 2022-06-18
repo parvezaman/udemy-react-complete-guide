@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 // import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
   console.log(props.items);
@@ -86,6 +87,7 @@ const Expenses = (props) => {
  */}
       {/* the same thing we can do using && operator (line: 46-57) and pretty neat way by declaring variable before return*/}
       {/* {expensesContent} remember? we moved them into ExpenseList.js */}
+      <ExpensesChart expenses={filteredExpenses} />
       <ExpensesList items={filteredExpenses} />
     </Card>
   );
