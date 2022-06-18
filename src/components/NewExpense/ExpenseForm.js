@@ -4,13 +4,13 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmmount, setEnteredAmmount] = useState("");
+  const [enteredamount, setEnteredamount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
   //   another way to manage all these three useStates by only one useState
   /* const [userInput, setUserInput] = useState({
     enteredTitle: "",
-    enteredAmmount: "",
+    enteredamount: "",
     enteredDate: "",
   }); */
   const titleChangeHandler = (event) => {
@@ -26,16 +26,16 @@ const ExpenseForm = (props) => {
     }); */
   };
 
-  const ammountChangeHandle = (event) => {
-    setEnteredAmmount(event.target.value);
-    // setUserInput({ ...userInput, enteredAmmount: event.target.value });
+  const amountChangeHandle = (event) => {
+    setEnteredamount(event.target.value);
+    // setUserInput({ ...userInput, enteredamount: event.target.value });
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
     // setUserInput({ ...userInput, enteredDate: event.target.value });
   };
-  console.log(enteredTitle, enteredAmmount, enteredDate);
+  console.log(enteredTitle, enteredamount, enteredDate);
   //   console.log(userInput);
   const submitHandler = (event) => {
     console.log(event);
@@ -43,13 +43,13 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      ammount: enteredAmmount,
+      amount: enteredamount,
       date: new Date(enteredDate),
     };
     console.log(expenseData);
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
-    setEnteredAmmount("");
+    setEnteredamount("");
     setEnteredDate("");
   };
   return (
@@ -70,9 +70,9 @@ const ExpenseForm = (props) => {
             type="number"
             min="0.01"
             step="0.01"
-            placeholder="enter ammount (float allowed)"
-            value={enteredAmmount}
-            onChange={ammountChangeHandle}
+            placeholder="enter amount (float allowed)"
+            value={enteredamount}
+            onChange={amountChangeHandle}
           />
         </div>
         <div className="new-expense__control">
